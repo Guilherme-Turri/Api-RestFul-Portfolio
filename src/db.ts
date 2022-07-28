@@ -8,6 +8,7 @@ async function connect() {
   const dbUri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.xmkj6.mongodb.net/?retryWrites=true&w=majority`;
   try {
     await mongoose.connect(dbUri);
+    console.log('auu');
     console.log('db connected');
   } catch (e) {
     console.log('fail to connect' + e);
