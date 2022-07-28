@@ -21,7 +21,7 @@ function connect() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield mongoose_1.default.connect(dbUri);
-            console.log('outside url');
+            console.log('change url- new user');
             console.log('db connected');
         }
         catch (e) {
