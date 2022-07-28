@@ -16,12 +16,12 @@ const mongoose_1 = __importDefault(require("mongoose"));
 require('dotenv').config();
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;
+const dbUri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.xmkj6.mongodb.net/?retryWrites=true&w=majority`;
 function connect() {
     return __awaiter(this, void 0, void 0, function* () {
-        const dbUri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.xmkj6.mongodb.net/?retryWrites=true&w=majority`;
         try {
             yield mongoose_1.default.connect(dbUri);
-            console.log('auu');
+            console.log('outside url');
             console.log('db connected');
         }
         catch (e) {
