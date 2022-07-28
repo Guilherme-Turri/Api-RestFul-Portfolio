@@ -8,7 +8,7 @@ const dbUri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.xmkj6.mongodb.net/?ret
 async function connect() {
   try {
     await mongoose.connect(dbUri);
-    console.log('change url');
+    console.log('change url- new user');
     console.log('db connected');
   } catch (e) {
     console.log('fail to connect' + e);
