@@ -22,8 +22,8 @@ function connect() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             yield mongoose_1.default.connect('mongodb+srv://cluster0.xmkj6.mongodb.net/?retryWrites=true&w=majority', {
-                user: process.env.DB_USER,
-                pass: process.env.DB_PASS,
+                user: DB_USER,
+                pass: DB_PASS,
             });
             console.log('changevar');
             console.log('db connected');
