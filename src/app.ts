@@ -1,8 +1,11 @@
 import express from 'express';
 import router from './router';
 import connect from './db';
+import cors from 'cors';
 
 const app = express();
+const corsPermission = cors();
+app.use(corsPermission);
 app.use(express.json());
 app.use('/', router);
 
