@@ -24,7 +24,7 @@ function connect() {
             yield mongoose_1.default.connect('mongodb+srv://cluster0.xmkj6.mongodb.net/?retryWrites=true&w=majority', {
                 user: process.env.DB_USER,
                 pass: process.env.DB_PASS,
-                bufferCommands: false,
+                bufferCommands: true,
             });
             console.log('change url- new user');
             console.log('db connected');

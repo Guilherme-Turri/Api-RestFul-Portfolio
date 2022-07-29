@@ -14,7 +14,7 @@ async function connect() {
       {
         user: process.env.DB_USER,
         pass: process.env.DB_PASS,
-        bufferCommands: false,
+        bufferCommands: true,
       },
     );
     console.log('change url- new user');
