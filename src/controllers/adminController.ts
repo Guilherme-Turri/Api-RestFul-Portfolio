@@ -14,7 +14,7 @@ export async function createAdmin(req: Request, res: Response) {
 export async function checkAdmin(req: Request, res: Response) {
   const admin = await adminModel.findOne({
     name: req.body.name,
-    password: req.body.password,
+    password: req.body.pass,
   });
 
   if (admin) {
