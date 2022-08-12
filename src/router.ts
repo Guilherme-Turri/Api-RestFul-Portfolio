@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+import { createAdmin, checkAdmin } from './controllers/adminController';
 import {
   createExperience,
   findExperienceById,
@@ -57,4 +58,6 @@ export default router
   .get('/projects/:id', findProjectById)
   .get('/projects', getAllProjects)
   .delete('/projects/:id', removeProject)
-  .patch('/projects/:id', updateProject);
+  .patch('/projects/:id', updateProject)
+  .post('/admin', createAdmin)
+  .post('/login', checkAdmin);

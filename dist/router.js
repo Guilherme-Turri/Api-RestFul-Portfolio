@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const adminController_1 = require("./controllers/adminController");
 const experienceControllers_1 = require("./controllers/experienceControllers");
 const classControllers_1 = require("./controllers/classControllers");
 const userControllers_1 = require("./controllers/userControllers");
@@ -31,4 +32,6 @@ exports.default = router
     .get('/projects/:id', projectControllers_1.findProjectById)
     .get('/projects', projectControllers_1.getAllProjects)
     .delete('/projects/:id', projectControllers_1.removeProject)
-    .patch('/projects/:id', projectControllers_1.updateProject);
+    .patch('/projects/:id', projectControllers_1.updateProject)
+    .post('/admin', adminController_1.createAdmin)
+    .post('/login', adminController_1.checkAdmin);
