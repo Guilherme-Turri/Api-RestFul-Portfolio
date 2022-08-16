@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { adminModel } from '../models/Admin';
+const jwt = require('jsonwebtoken');
 
 export async function createAdmin(req: Request, res: Response) {
   try {
@@ -18,7 +19,14 @@ export async function checkAdmin(req: Request, res: Response) {
   });
 
   if (admin) {
-    return res.json({ status: 'ok', admin: true });
+    const token = jwt.sign(
+      {
+        name: admin.name,
+        pass: admin.pass,
+      },
+      'admin1',
+    );
+    return res.json({ status: 'ok', admin: token });
   } else {
     return res.json({ status: 'error', admin: false });
   }
